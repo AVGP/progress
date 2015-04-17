@@ -1,0 +1,30 @@
+<ion-view view-title="Progress">
+  <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-divider">Current Level</div>
+      <div class="item item-body">
+        <div>
+          You've achieved <b>{{quests.doneSize()}} of {{quests.totalSize()}}</b> points so far
+          <progress max="100" ng-value="quests.doneSize() * 100 / quests.totalSize()"></progress>
+        </div>
+      </div>
+    </div>
+
+    <div class="list card">
+      <div class="item item-divider">Current Quest</div>
+      <div class="item item-body" ng-show="quests.nextOpenQuest()">
+        <a class="item item-icon-right" ng-click="resolve(quests.nextOpenQuest())">
+          <i class="icon ion-checkmark-round"></i>
+          {{quests.nextOpenQuest() && quests.nextOpenQuest().description}}
+        </a>
+      </div>
+      <div class="item item-body" ng-hide="quests.nextOpenQuest()">
+        <div class="item-icon-left">
+          <i class="icon ion-trophy"></i>
+          Wheee! All done :-)
+        <div>
+      <div>
+    </div>
+
+  </ion-content>
+</ion-view>

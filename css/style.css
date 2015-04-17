@@ -1,0 +1,19 @@
+/* Empty. Add your own CSS if you like */
+progress {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image: -webkit-linear-gradient(left, #09c, #4f4);
+
+  border-radius: 2px;
+  background-size: 100% 100%;
+}
