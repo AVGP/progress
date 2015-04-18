@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets"
+  xmlns:gap = "http://phonegap.com/ns/1.0"
+  id        = "de.geekonaut.progress"
+  version   = "1.0.0">
+    <name>Progress</name>
+    <description>
+        Productivity for humans
+    </description>
+    <author email="martin@geekonaut.de" href="http://geekonaut.de">
+      Martin Naumann
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <icon src="img/logo.png" />
+    <gap:splash src="img/logo.png"
+</widget>
