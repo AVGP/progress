@@ -46,7 +46,7 @@ angular.module('starter.services', [])
       totalSize: function () {
         return quests.reduce(function (a, b) {
           return {size: a.size + b.size}
-        }).size
+        }, {size: 0}).size
       },
       nextOpenQuest: function () {
         return this.listOpen().shift()
