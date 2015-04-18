@@ -1,26 +1,18 @@
+/* global angular */
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, Quests) {
-  $scope.quests = Quests;
+  .controller('DashCtrl', function ($scope, Quests) {
+    $scope.quests = Quests
 
-  $scope.resolve = function(quest) {
-    Quests.resolve(quest)
-  }
-})
+    $scope.resolve = function (quest) {
+      Quests.resolve(quest)
+    }
+  })
 
-.controller('ChatsCtrl', function($scope, Quests) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});
+  .controller('AddQuestCtrl', function ($scope, $stateParams, Quests) {
+    $scope.submit = function (quest) {
+      Quests.add({description: quest.description, size: quest.size || 3, done: false})
+      quest.description = ''
+      quest.size = 3
+    }
+  })
