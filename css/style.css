@@ -13,6 +13,7 @@ progress[value]::-webkit-progress-bar {
 
 progress[value]::-webkit-progress-value {
   background-image: -webkit-linear-gradient(left, #09c, #4f4);
+  transition: width 1.2s;
 
   border-radius: 2px;
   background-size: 100% 100%;
