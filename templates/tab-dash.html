@@ -1,6 +1,6 @@
 <ion-view view-title="Progress">
   <ion-content class="padding">
-    <div class="list card">
+    <div class="list card" ng-show="quests.totalSize() > 0">
       <div class="item item-divider">Current Level</div>
       <div class="item item-body">
         <div>
@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div class="list card">
+    <div class="list card" ng-show="quests.totalSize() > 0">
       <div class="item item-divider">Current Quest</div>
       <div class="item item-body" ng-show="quests.nextOpenQuest()">
         <a class="item item-icon-right" ng-click="resolve(quests.nextOpenQuest())">
@@ -21,9 +21,32 @@
       <div class="item item-body" ng-hide="quests.nextOpenQuest()">
         <div class="item-icon-left">
           <i class="icon ion-trophy"></i>
-          Wheee! All done :-)
+          Wheee! All done <i class="ion-happy-outline"></i>
         </div>
       </div>
+    </div>
+
+    <div class="list card" ng-hide="quests.totalSize() > 0 && quests.nextOpenQuest()">
+      <div class="item item-divider">What are you doing?</div>
+      <form ng-controller="AddQuestCtrl" ng-submit="submit(quest)">
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" ng-model="quest.description" placeholder="Description">
+          </label>
+
+          <input type="hidden" ng-model="quest.size" value="3">
+
+          <div class="padding">
+            <label class="item" style="text-align: center">How big is this quest?</label>
+            <div class="button-bar bar-positive">
+              <button type="button" ng-class="quest.size == 1 ? 'button button-stable' : 'button'" ng-click="quest.size=1">Small</button>
+              <button type="button" ng-class="quest.size == 3 || quest.size === undefined ? 'button button-stable' : 'button'" ng-click="quest.size=3">Medium</button>
+              <button type="button" ng-class="quest.size == 5 ? 'button button-stable' : 'button'" ng-click="quest.size=5">Large</button>
+            </div>
+            <button type="submit" class="button button-block button-positive">Add</button>
+          </div>
+        </div>
+      </form>
     </div>
   </ion-content>
 </ion-view>
