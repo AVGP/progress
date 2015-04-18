@@ -1,0 +1,25 @@
+{
+  "name": "Progress",
+  "version": "1.0.0",
+  "description": "Productivity for humans",
+  "main": "index.html",
+  "scripts": {
+    "test": "standard"
+  },
+  "keywords": [
+    "productivity",
+    "to-do",
+    "mobile",
+    "app"
+  ],
+  "standard": {
+    "ignore": [
+      "**/lib/**/*.js"
+    ]
+  },
+  "author": "Martin Naumann <martin@geekonaut.de>",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^3.6.1"
+  }
+}
