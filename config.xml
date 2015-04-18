@@ -16,5 +16,5 @@
 
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <icon src="img/logo.png" />
-    <gap:splash src="img/logo.png"
+    <gap:splash src="img/logo.png" />
 </widget>
